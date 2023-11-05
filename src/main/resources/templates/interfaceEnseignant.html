@@ -157,19 +157,17 @@
 
     function saveAbsences(row) {
       console.log("succceeesss1", row);
-      // Extract the updated data from the row and send it to the server for saving
       var name = row.cells[0].innerText;
       var absences = row.cells[5].innerText;
       var moyenne = row.cells[6].innerText;
 
-      // Make an AJAX request to save changes to the server
       $.ajax({
-        url: "/updateAbsences", // Adjust the URL as per your Spring Boot configuration
+        url: "/updateAbsences",
         type: "PUT",
         data: {
           name: name,
           absences: absences,
-          moyenne: moyenne,
+          moyenne: Moyenne,
         },
         success: function (data) {
           console.log("succceeesss2", row);

@@ -39,14 +39,11 @@ public class EnseignantController {
         model.addAttribute("enseignant",enseignant );
         model.addAttribute("etudiant",etudiant );
 
-        return "interfaceEnseignant"; // Return the name of the HTML template without the file extension
+        return "interfaceEnseignant";
     }
 
-    // Add API
-    @PostMapping("/addEnseignant")
-    public Enseignant addEnseignant(@RequestBody Enseignant enseignant){
-        return service.saveEnseignant(enseignant);
-    }
+   
+    
     @PostMapping("/addTeacher")
     public ResponseEntity<String> addTeacher(@ModelAttribute Enseignant enseignant) {
         try {

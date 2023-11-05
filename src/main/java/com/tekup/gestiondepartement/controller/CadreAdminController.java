@@ -47,14 +47,11 @@ public class CadreAdminController {
         model.addAttribute("etudiant",etudiant );
          
         model.addAttribute("enseignant",enseignant );
-        return "interfaceAdmin"; // Return the name of the HTML template without the file extension
+        return "interfaceAdmin"; 
     }
 
-      // Add API
-      @PostMapping("/addCadreAdministratif")
-      public CadreAdministratif addCadreAdmin(@RequestBody CadreAdministratif Cadre){
-          return service.saveCadreAdministratif(Cadre);
-      }
+      
+     
       @PostMapping("/addStaff")
     public ResponseEntity<String> addStaff(@ModelAttribute CadreAdministratif staff) {
         try {
